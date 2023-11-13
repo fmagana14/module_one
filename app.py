@@ -38,5 +38,26 @@ def sayntimes(word, n):
         return repeated_word
     else:
         return "Invalid input. Please try again by entering a word and a positive integer!"
+
+# dice game 
+@app.route('/dicegame')
+def dicegame():
+    dice_roll = random.randint(1,6)
+
+    if int(dice_roll) == 6:
+        result = f"You rolled a {dice_roll}. You won!"
+
+    else:
+        result = f"You rolled a {dice_roll}. You lost!"
+        
+    return result
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
